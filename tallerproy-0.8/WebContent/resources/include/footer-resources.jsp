@@ -26,6 +26,10 @@
 	<!-- JavaScripts initializations and stuff -->
 	<script src="<%=request.getServletContext().getContextPath() %>/resources/assets/js/neon-custom.js"></script>
 
-
 	<!-- Demo Settings -->
 	<script src="<%=request.getServletContext().getContextPath() %>/resources/assets/js/neon-demo.js"></script>
+
+	<script	src="//cdn.datatables.net/tabletools/2.2.4/js/dataTables.tableTools.min.js"></script>
+	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+	

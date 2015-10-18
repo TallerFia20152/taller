@@ -13,33 +13,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Neon Admin Panel" />
-<meta name="author" content="" />
 
 <title>Taller Proyectos</title>
-
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/font-icons/entypo/css/entypo.css">
-<link rel="stylesheet"
-	href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/bootstrap.css">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/neon-core.css">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/neon-theme.css">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/neon-forms.css">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/custom.css">
-<link rel="stylesheet"
-	href="<%=request.getServletContext().getContextPath()%>/resources/assets/css/skins/red.css">
-
-
-<script
-	src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/jquery-1.11.0.min.js"></script>
+	<jsp:include page="/resources/include/header-resources.jsp"></jsp:include>
 <script>
 	$.noConflict();
 </script>
@@ -58,7 +34,6 @@
 
 		<div class="main-content">
 			<jsp:include page="/resources/include/profile-bar.jsp"></jsp:include>
-
 			<hr />
 
 			<ol class="breadcrumb bc-3">
@@ -144,18 +119,6 @@
 		<jsp:include page="/resources/include/chat.jsp"></jsp:include>
 	</div>
 
-	<!-- 
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/gsap/main-gsap.js"></script>
-	<script
-		src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/bootstrap.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/joinable.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/resizeable.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/neon-api.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/neon-chat.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/neon-custom.js"></script>
-	<script src="<%=request.getServletContext().getContextPath()%>/resources/assets/js/neon-demo.js"></script>
-	-->
 	<jsp:include page="/resources/include/footer-resources.jsp"></jsp:include>
 </body>
 </html>

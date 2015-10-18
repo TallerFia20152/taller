@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="<%=request.getServletContext().getContextPath() %>/resources/assets/css/skins/red.css">
 
 <script src="<%=request.getServletContext().getContextPath() %>/resources/assets/js/jquery-1.11.0.min.js"></script>
+
 <script>
 	$.noConflict();
 </script>
