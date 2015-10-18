@@ -1,0 +1,17 @@
+INDEX VERSION 1.126
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2120047225.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3227270156.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1539939612.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2577131283.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1221784257.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\691473228.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3327265173.index
+\tallerproy-0.8\src
+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2185903678.index
+\tallerproy-0.8\src

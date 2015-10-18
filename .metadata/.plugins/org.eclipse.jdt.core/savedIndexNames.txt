@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+C:\taller\git\taller\.metadata\.plugins\org.eclipse.jdt.core
+2678522638.index
