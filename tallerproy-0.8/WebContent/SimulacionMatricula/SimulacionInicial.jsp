@@ -10,10 +10,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="Neon Admin Panel" />
-	<meta name="author" content="" />
 	<title>Taller Proyectos</title>
+	
 	<jsp:include page="/resources/include/header-resources.jsp"></jsp:include>
+	<script src="SimulacionMatricula/excellexport/excellentexport.js"></script>
+	
 </head>
 
 <%
@@ -110,19 +111,13 @@
 									%>
 								</table>
 							</div>
-							</p>
 						</div>
 
 					</div>
 
 				</div>
 
-			</div>
-
-			
-			
-			
-			
+			</div>			
 			<jsp:include page="/resources/include/footer.jsp"></jsp:include>
 		</div>
 		<jsp:include page="/resources/include/chat.jsp"></jsp:include>
