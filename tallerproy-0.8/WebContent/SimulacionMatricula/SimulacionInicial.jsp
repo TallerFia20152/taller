@@ -27,6 +27,10 @@
 		<div class="main-content">
 			<jsp:include page="/resources/include/profile-bar.jsp"></jsp:include>
 			
+
+
+
+
 			<ol class="breadcrumb bc-3">
 				<li><a href="#"><i class="fa-home"></i>Simulacion Matricula</a>
 				</li>

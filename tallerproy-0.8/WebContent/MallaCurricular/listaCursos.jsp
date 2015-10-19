@@ -1,20 +1,22 @@
-<%@page
-	import="edu.usmp.fia.taller.common.bean.MallaCurricular.T_course"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<%@page import="edu.usmp.fia.taller.common.action.SessionParameters"%>
+<%@page import="edu.usmp.fia.taller.common.bean.Usuario"%>
+<%@page import="edu.usmp.fia.taller.common.bean.Persona"%>
+<%@page	import="edu.usmp.fia.taller.common.bean.MallaCurricular.T_course"%>
+<html lang="en">
 <head>
-<title>Malla Curricular</title>
 <style type="text/css">
 body {
 	width: 150%;
 }
 </style>
-
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
-<meta http-equiv="X-UA-Compatible" content="IE=7">
-<link rel="stylesheet" href="MallaCurricular/jsPlumbDemo.css"></link>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Taller Proyectos</title>
+	<jsp:include page="/resources/include/header-resources.jsp"></jsp:include>
+	
+	<link rel="stylesheet" href="MallaCurricular/jsPlumbDemo.css"></link>
 <link rel="stylesheet" href="MallaCurricular/css/FlowchartDemo.css"></link>
 <!--  -->
 <link
@@ -28,13 +30,23 @@ body {
 </style>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/main.js"></script>
-
-<!-- -------------------------------------------------- -->
-<!-- parte 1 -->
-<%@include file="/MallaCurricular/header.jsp"%>
+	
 </head>
-<body onunload="jsPlumb.unload();">
-	<div class="position">
+
+<%
+	Usuario oUsuario = (Usuario) request.getSession(false).getAttribute(SessionParameters.USUARIO.text());
+	Persona oPersona = oUsuario.getPersona();
+%>
+
+
+<body class="page-body skin-red" onunload="jsPlumb.unload();">
+	<div class="page-container">
+		<jsp:include page="/resources/include/sidebar-menu.jsp"></jsp:include>
+		<div class="main-content">
+			<jsp:include page="/resources/include/profile-bar.jsp"></jsp:include>
+			<%@include file="/MallaCurricular/header.jsp"%>
+			
+			<div class="position">
 		<!-- importante version de cuross flecha punteada y normal-->
 		<!-- script -->
 		<script type="text/javascript"
@@ -350,8 +362,6 @@ body {
 				%>
 			</div>
 		</div>
-		<%----%>
-
 		<script>
 			jsPlumb.bind("ready", function() {
 				jsPlumb.setRenderMode(jsPlumb.SVG);
@@ -637,6 +647,19 @@ body {
 			
 			});
 		</script>
+		
+		
+		
+		
+			<!-- Contenido -->
+
+			<jsp:include page="/resources/include/footer.jsp"></jsp:include>
+		</div>
+		<jsp:include page="/resources/include/chat.jsp"></jsp:include>
+		</div>
 	</div>
+
+	<jsp:include page="/resources/include/footer-resources.jsp"></jsp:include>
+	
 </body>
 </html>

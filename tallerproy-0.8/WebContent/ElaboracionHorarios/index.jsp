@@ -51,15 +51,6 @@
 
 
 <body class="page-body skin-red">
-	<div class="page-container">
-		<jsp:include page="/resources/include/sidebar-menu.jsp"></jsp:include>
-		<div class="main-content">
-			<jsp:include page="/resources/include/profile-bar.jsp"></jsp:include>
-			
-			
-			
-			<!-- Contenido -->
-
   <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -69,7 +60,17 @@
     </div>
   </div>
 </div>
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div class="page-container">
+		<jsp:include page="/resources/include/sidebar-menu.jsp"></jsp:include>
+		<div class="main-content">
+			<jsp:include page="/resources/include/profile-bar.jsp"></jsp:include>
+			
+			
+			
+			<!-- Contenido -->
+
+
+  <div>
   <h1>Usted está trabajando en la versión: <%=version %></h1>
 
 

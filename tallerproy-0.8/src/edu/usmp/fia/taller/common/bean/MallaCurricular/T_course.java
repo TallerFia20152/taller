@@ -5,6 +5,8 @@ public class T_course {
 	String name;
 	int t_cycle_id;
 	int mencion;
+	String top;
+	String left;
 	
 //	int t_course_id;
 //	int credit;
@@ -33,6 +35,19 @@ public class T_course {
 	public void setT_cycle_id(int t_cycle_id) {
 		this.t_cycle_id = t_cycle_id;
 	}
+	public String getTop() {
+		return top;
+	}
+	public void setTop(String top) {
+		this.top = top;
+	}
+	public String getLeft() {
+		return left;
+	}
+	public void setLeft(String left) {
+		this.left = left;
+	}
+	
 //	public int getT_course_id() {
 //		return t_course_id;
 //	}

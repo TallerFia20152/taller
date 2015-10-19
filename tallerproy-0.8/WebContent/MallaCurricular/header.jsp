@@ -1,11 +1,6 @@
 <header>
 	<div class="warpper">
-		<div class="logo">
-			<img src="/Template4/MallaCurricular/imagenes/logofia.png"
-				align="absbottom"> <span
-				style="font-family: arial; color: White; font-size: 50px;"
-				class="titulohead">MALLA CURRICULAR 
-		</div>
+		
 		<nav class="menu">
 			<ul>
 				<li><a

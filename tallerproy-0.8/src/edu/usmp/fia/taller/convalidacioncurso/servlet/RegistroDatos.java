@@ -5,19 +5,9 @@
  */
 package edu.usmp.fia.taller.convalidacioncurso.servlet;
 
-import com.google.gson.Gson;
-import edu.usmp.fia.taller.common.action.ActionServlet;
-import edu.usmp.fia.taller.common.action.Default;
-import edu.usmp.fia.taller.common.action.HttpMethod;
-import edu.usmp.fia.taller.common.action.HttpMethodType;
-import edu.usmp.fia.taller.common.action.RequireLogin;
-import edu.usmp.fia.taller.common.bean.Curso;
-import edu.usmp.fia.taller.common.bean.Departamento;
-import edu.usmp.fia.taller.common.dao.DAOFactory;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.annotation.WebServlet;
+
+import edu.usmp.fia.taller.common.action.ActionServlet;
 
 /**
  *

@@ -1,25 +1,22 @@
-
-<%@page
-	import="edu.usmp.fia.taller.common.bean.MallaCurricular.T_course"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<%@page import="edu.usmp.fia.taller.common.action.SessionParameters"%>
+<%@page import="edu.usmp.fia.taller.common.bean.Usuario"%>
+<%@page import="edu.usmp.fia.taller.common.bean.Persona"%>
+<%@page	import="edu.usmp.fia.taller.common.bean.MallaCurricular.T_course"%>
+<html lang="en">
 <head>
-<title>Malla Curricular Sistema de Información</title>
 <style type="text/css">
 body {
 	width: 150%;
 }
 </style>
-<style type="text/css">
-body {
-	height: 100%;
-}
-</style>
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
-<meta http-equiv="X-UA-Compatible" content="IE=7">
-<link rel="stylesheet" href="MallaCurricular/jsPlumbDemo.css"></link>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Taller Proyectos</title>
+	<jsp:include page="/resources/include/header-resources.jsp"></jsp:include>
+	
+	<link rel="stylesheet" href="MallaCurricular/jsPlumbDemo.css"></link>
 <link rel="stylesheet" href="MallaCurricular/css/FlowchartDemo.css"></link>
 <!--  -->
 <link
@@ -33,14 +30,24 @@ body {
 </style>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/main.js"></script>
-
-<!-- -------------------------------------------------- -->
-<!-- parte 1 -->
-<%@include file="/MallaCurricular/header.jsp"%>
+	
 </head>
-<body onunload="jsPlumb.unload();">
-	<div class="position">
-		<!-- importante version de cursos flecha punteada y normal-->
+
+<%
+	Usuario oUsuario = (Usuario) request.getSession(false).getAttribute(SessionParameters.USUARIO.text());
+	Persona oPersona = oUsuario.getPersona();
+%>
+
+
+<body class="page-body skin-red" onunload="jsPlumb.unload();">
+	<div class="page-container">
+		<jsp:include page="/resources/include/sidebar-menu.jsp"></jsp:include>
+		<div class="main-content">
+			<jsp:include page="/resources/include/profile-bar.jsp"></jsp:include>
+			<%@include file="/MallaCurricular/header.jsp"%>
+			
+			<div class="position">
+		<!-- importante version de cuross flecha punteada y normal-->
 		<!-- script -->
 		<script type="text/javascript"
 			src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
@@ -91,8 +98,10 @@ body {
 		<%
 					List<T_course> cursos11 = (List<T_course>) request.getAttribute("cursos11");
 				%>
-
+			
 		<div id="demo" style="background: white; overflow: hidden;">
+
+
 			<div id="ciclo1"
 				style="background: white; width: 5.9%; float: left; margin-right: 1%;">
 				<tr>
@@ -100,17 +109,18 @@ body {
 						<br>Ciclo I</br>
 					</h3>
 				</tr>
-
+				<%!int var=0;%>
 				<%
-									for (T_course curso : cursos) {
-								%>
-
+ 					for (T_course curso : cursos) {
+ 				%>
+				<%
+					var=var+1;
+				%>
 				<div class="window<%=curso.getMencion()%>"
 					id="<%=curso.getId()%>_estilo">
 					<!-- style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -134,8 +144,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -162,8 +171,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -171,8 +179,9 @@ body {
 				<%
 					}
 				%>
-				<br> <br> <br> <br> <img
-					src="<%=request.getContextPath()%>/MallaCurricular/imagenes/SI-COLORES.PNG"></a>
+				<br> <br> <br> <br>
+						<img src="<%=request.getContextPath()%>/MallaCurricular/imagenes/SI-COLORES.PNG"></a> 
+
 
 			</div>
 
@@ -191,8 +200,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -218,8 +226,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -245,8 +252,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -273,8 +279,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -300,8 +305,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -327,10 +331,10 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
+				<br> <br> <br> <br>
 
 				<%
  					}
@@ -354,8 +358,7 @@ body {
 					id="<%=curso.getId()%>_estilo">
 					<!-- 	style="border-color: green;"> -->
 					<%=curso.getId()%>
-					<br>
-					<%=curso.getName()%>
+					<br><%=curso.getName()%>
 
 				</div>
 				<br> <br> <br> <br>
@@ -363,62 +366,85 @@ body {
 					}
 				%>
 			</div>
-
-
-
+						
 			<!--Electivo SI -->
-
-
+		
+		
 			<div id="IS"
 				style="background: WHITE; width: 10%; float: left; margin-right: 1%;">
 				<!--dividir2 width: 10%; float: left; margin-left: 0%;"> -->
-				<tr>
-					<h3>
-						<br>Electivo SI</br>
-					</h3>
-				</tr>
-
+			
 				<%
 								for (T_course curso : cursos11) {
 							%>
-
-				<div class="window<%=curso.getMencion()%>_M"
-					id="<%=curso.getId()%>_estilo">
+			
+				<div class="window<%=curso.getMencion()%>_M" id="<%=curso.getId()%>_estilo"
+					<% if (curso.getTop() != null && curso.getLeft() != null) { %>
+					style="top: <%=curso.getTop()%>; left: <%=curso.getLeft() %>"
+					<% } %>
+				>
 					<!-- style="border-color: green;"> -->
 					<%=curso.getId()%>
 					<br>
 					<%=curso.getName()%>
 
 				</div>
-				<br>
-				<br>
-				<br>
-				<pre>
-					<br>
-				</pre>
+				<br><br><br> 
 
 				<%
 					}
 				%>
 			</div>
+			
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 317.5px; left: 1194.61px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-			<%----%>
-			<script>
+		<div class="window3_M" id="90933_estilo"
+					style="top: 385.5px; left: 1194.61px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 453.5px; left: 1194.61px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>		
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 521.5px; left: 1194.61px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>		
+		
+		
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 521.5px; left: 1069.95px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>		
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 453.5px; left: 1069.95px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 521.5px; left: 946.297px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>
+		
+		<div class="window3_M" id="90933_estilo"
+					style="top: 521.5px; left: 813.969px; background-color: #80ff80;">
+			<br>Electivo Libre
+		</div>
+		
+		<%----%>
+		<script>
 			jsPlumb.bind("ready", function() {
 				jsPlumb.setRenderMode(jsPlumb.SVG);
 
-			//-------------------------------by chinoAdo{^^}----------------------------------------------------
+			//-------------------------------by chino{^^}----------------------------------------------------
 				jsPlumb.Defaults.DragOptions = {
 				//cursor : 'pointer',
 					cursor : 'move',
@@ -441,16 +467,6 @@ body {
 							dropOptions : {tolerance : "touch",hoverClass : "dropHover"},
 							isTarget : true,endpoint : [  "Rectangle" ,  {  width : 0.1 ,//width : 0.1 ,
 								height : 5  }  ]  }; //1
-								
-					var  sourceEndpointE  =  {  anchor : [  "RightMiddle" ],maxConnections : 2, 
-										dropOptions : {tolerance : "touch",hoverClass : "dropHover"},
-										isSource : true ,  endpoint : [  "Dot" ,  {  radius:4//radius : 0.1
-											}  ]  }; 
-					var  targetEndpointE  =  { anchor : [  "LeftMiddle" ] ,maxConnections : 5,
-									
-										dropOptions : {tolerance : "touch",hoverClass : "dropHover"},
-										isTarget : true,endpoint : [  "Rectangle" ,  {  width : 0.1 ,//width : 0.1 ,
-											height : 5  }  ]  }; //1								
 					var  source1EndpointExc  =  {  anchor : [ 1, 0.8, -1,0.5 ],maxConnections : 5, 
 										dropOptions : {tolerance : "touch",hoverClass : "dropHover"},
 										isSource : false ,  endpoint : [  "Dot" ,  {  radius:4//radius : 0.1
@@ -600,51 +616,19 @@ body {
 					var t90070=jsPlumb . addEndpoint (  "90070_estilo" ,  targetEndpoint  );//PROYECTO 2
 					//var s90070=jsPlumb . addEndpoint (  "90070_estilo" ,  sourceEndpoint  );//PROYECTO 2
 					
-					/*  */
-					/*ELECTIVO SI */
-					var te90085 =jsPlumb . addEndpoint (  "90085_estilo" ,  targetEndpointE  );
-					var se90085 =jsPlumb . addEndpoint (  "90085_estilo" ,  sourceEndpointE  );//OPE1
-					//var te90088 =jsPlumb . addEndpoint (  "90088_estilo" ,  targetEndpointE  );
-					//var se90088 =jsPlumb . addEndpoint (  "90088_estilo" ,  sourceEndpointE  );//TEORIAGENERALSIS
-					var te90116 =jsPlumb . addEndpoint (  "90116_estilo" ,  targetEndpointE  );
-					//var se90116 =jsPlumb . addEndpoint (  "90116_estilo" ,  sourceEndpointE  );//OPE2
-					var te90548 =jsPlumb . addEndpoint (  "90548_estilo" ,  targetEndpointE  );
-					//var se90548 =jsPlumb . addEndpoint (  "90548_estilo" ,  sourceEndpointE  );//FORMULACIONYEVALUACIONPROYECTOS
-					var te90670 =jsPlumb . addEndpoint (  "90670_estilo" ,  targetEndpointE  );
-					//var se90670 =jsPlumb . addEndpoint (  "90670_estilo" ,  sourceEndpointE  );//PLANEAMIENTO ESTRATEGICO DE TI
-					var te90861 =jsPlumb . addEndpoint (  "90861_estilo" ,  targetEndpointE  );
-					var se90861 =jsPlumb . addEndpoint (  "90861_estilo" ,  sourceEndpointE  );//ADM DE BASE DE DATOS
-					//var te90933 =jsPlumb . addEndpoint (  "90933_estilo" ,  targetEndpointE  );
-					//var se90933 =jsPlumb . addEndpoint (  "90933_estilo" ,  sourceEndpointE  );//GESTION DEL CONOCIMIENTO
-					var te90934 =jsPlumb . addEndpoint (  "90934_estilo" ,  targetEndpointE  );
-					//var se90934 =jsPlumb . addEndpoint (  "90934_estilo" ,  sourceEndpointE  );//INTELIGENCIA DE NEGOCIOS
-					var te91119 =jsPlumb . addEndpoint (  "91119_estilo" ,  targetEndpointE  );
-					//var se91119 =jsPlumb . addEndpoint (  "91119_estilo" ,  sourceEndpointE  );//SISTEMAS INTEGRADOS DE GESTION ERP
-					var te91122 =jsPlumb . addEndpoint (  "91122_estilo" ,  targetEndpointE  );
-					//var se91122 =jsPlumb . addEndpoint (  "91122_estilo" ,  sourceEndpointE  );/* //ARQUITECTURA EMPRESARIAL I  */ 
-					/*   */
-					jsPlumb.connect({source : s90089,target : te90861,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-						,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//teoriaBD,DBA
-						jsPlumb.connect({source : se90861,target : te90934,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-							,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//DBA,intenegocios
-							jsPlumb.connect({source : s91162,target : te91119,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-								,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//siste3 ,sis inte erp
-					jsPlumb.connect({source : s90664,target : te91122,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-						,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//grti arquiempresarial
-						jsPlumb.connect({source : s90664,target : te90670,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-							,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//grti plan estrategicoTI
-							jsPlumb.connect({source : s90145,target : te90548,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-								,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//FRMULACION Y EVA PROY
-								jsPlumb.connect({source : s90060,target : te90085,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-									,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//OPE1
-									jsPlumb.connect({source : se90085,target : te90116,paintStyle : {dashstyle : "1",lineWidth : 2,strokeStyle : "#01DF01"
-										,outlineColor:"white",outlineWidth:-1},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//OPE1,2
-					//-------------*
-					jsPlumb.connect({source : s90002,target : t90003,paintStyle : {dashstyle : "0",strokeStyle : "purple",//line color con y flecha
-							lineWidth : 2},outlineColor:"white",outlineWidth:2,// endpoint : [  "Dot" ,"red"],
+					/* var t90003=jsPlumb . addEndpoint (  "90003_estilo" ,  targetEndpoint  );
+					var s90003=jsPlumb . addEndpoint (  "90003_estilo" ,  sourceEndpoint  ); */
+					jsPlumb.connect({source : s90002,target : t90003,//lenguaje, filosofia
+											
+							paintStyle : {dashstyle : "0",strokeStyle : "purple",//line color con y flecha
+							lineWidth : 2
+						},outlineColor:"white",outlineWidth:2,// endpoint : [  "Dot" ,"red"],
 						/*  endpointStyle:{ fillStyle:"lightgray", outlineColor:"gray" }, */
-						 overlays:[["Arrow" , { width:12, length:12, location:1 }],//by chino /*  [ "Label", { label:"-", location:0.5, id:"myLabel" } ] */
-						           ],// endpointStyle:{ fillStyle:"purple", outlineColor:"black", outlineWidth:1 }//lenguaje, filosofia
+						 overlays:[ 
+						            ["Arrow" , { width:12, length:12, location:1 }],//by chino
+						            /*  [ "Label", { label:"-", location:0.5, id:"myLabel" } ] */
+						           ],// endpointStyle:{ fillStyle:"purple", outlineColor:"black", outlineWidth:1 }
+						        
 					});
 					jsPlumb.connect({source : s90005,target : t90020,paintStyle : {dashstyle : "0",lineWidth : 2,strokeStyle : "purple"
 						,outlineColor:"white",outlineWidth:2},overlays:[["Arrow" , { width:12, length:12, location:1 }],], });//actividades 1 ,2
@@ -741,6 +725,19 @@ body {
 			
 			});
 		</script>
+		
+		
+		
+		
+			<!-- Contenido -->
+
+			<jsp:include page="/resources/include/footer.jsp"></jsp:include>
 		</div>
+		<jsp:include page="/resources/include/chat.jsp"></jsp:include>
+		</div>
+	</div>
+
+	<jsp:include page="/resources/include/footer-resources.jsp"></jsp:include>
+	
 </body>
 </html>
