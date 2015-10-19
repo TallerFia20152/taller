@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <li><a href="#"> <i class="entypo-gauge"></i><span
 		class="title">PROCESO CONVALIDACI&Oacute;N</span></a>
@@ -30,5 +29,4 @@
 		<!-- 				</ul> -->
 		<!-- 			</li> -->
 	</ul></li>
-=======
->>>>>>> 2769213d86c83748dbb782542bdcda136f997f1a
+
