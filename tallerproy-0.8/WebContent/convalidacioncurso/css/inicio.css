@@ -40,3 +40,14 @@ fieldset legend{
     font-stretch: expanded;
     font-variant: small-caps;
 }
+.fixed {
+    position: fixed;
+    /* border-bottom: 1px solid #DDD; */
+    top: 60px;
+    width: 100%;
+    z-index: 99;
+    /* height: 16px; */
+    left: 0px;
+    padding-top: 10px;
+    background: url(../imagenes/grid/mascaras/2.png) 50% 50% repeat-x;
+}
