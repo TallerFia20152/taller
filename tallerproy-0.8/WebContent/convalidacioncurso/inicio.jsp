@@ -36,7 +36,7 @@
 					</div>
 					<div>
 						<input type="text" id="comboAlumno"
-							placeholder="Ingrese primer apellido o código de alumno para comenzar" />
+							placeholder="Ingrese primer apellido o cÃ³digo de alumno para comenzar" />
 					</div>
 				</div>
 			</section>
@@ -45,8 +45,8 @@
 				<fieldset>
 					<legend>Datos Generales</legend>
 					<table style="height: 30px">
-						<tr id="datosalumno">
-							<td class="subsubtit" style="width: 50px;">Código:</td>
+						<tr id="datosalumno" class="fixed" style="height: 30px;">
+							<td class="subsubtit" style="width: 50px;">CÃ³digo:</td>
 							<td style="width: 100px;">
 								<div id="codigo"></div>
 							</td>
