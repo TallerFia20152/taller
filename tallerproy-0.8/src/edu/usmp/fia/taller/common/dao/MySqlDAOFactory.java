@@ -18,11 +18,12 @@ import com.jcraft.jsch.Session;
 import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 
 import edu.usmp.fia.taller.common.bean.MallaCurricular.T_course;
 import edu.usmp.fia.taller.common.dao.modules.DAOFactoryGeneral;
 import edu.usmp.fia.taller.common.dao.modules.MysqlFactoryGeneral;
+import edu.usmp.fia.taller.common.dao.modules.elaboracionhorario.DAOFactoryElabHorarios;
+import edu.usmp.fia.taller.common.dao.modules.elaboracionhorario.MysqlFactoryElabHorarios;
 import edu.usmp.fia.taller.common.util.ThreadUtil;
 import edu.usmp.fia.taller.mallacurricular.MySql.MySqlFactoryMCurricular;
 import edu.usmp.fia.taller.mallacurricular.interfaces.DAOFactoryMCurricular;
@@ -218,7 +219,7 @@ public class MySqlDAOFactory extends DAOFactory {
 	public DAOFactoryGeneral getGeneral() { return new MysqlFactoryGeneral(); }
 	public DAOFactorySMatricula getSimulacionMatricula() { return new MySqlFactorySMatricula(); }
 	public DAOFactoryMCurricular getMallaCurricular() { return new MySqlFactoryMCurricular(); }
-
+	public DAOFactoryElabHorarios getElaboracionHorario() { return new MysqlFactoryElabHorarios(); }
 
 
 }
