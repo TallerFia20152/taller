@@ -79,7 +79,7 @@ public class HistoriaConvalidacion extends ActionServlet {
 	    @Default
 	    @RequireLogin(false)
 	    public void mantenimiento() throws ServletException, IOException {
-	        response.sendRedirect(request.getServletContext().getContextPath() + "/convalidacioncurso/mantenimientolumno.jsp");
+	        response.sendRedirect(request.getServletContext().getContextPath() + "/convalidacioncurso/mantenimientAlumno.jsp");
 	    }
 	    @Default
 	    @RequireLogin(false)
